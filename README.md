@@ -1,19 +1,19 @@
 # valecov.github.io
-# 👾 Vale's Portfolio | Level 1
+# 👾 Página personal de Valentina Covarrubias Faure
 
 ![Status](https://img.shields.io/badge/Status-Online-success?style=for-the-badge&color=A5D6A7)
 ![Style](https://img.shields.io/badge/Style-Pixel%20Art-purple?style=for-the-badge&color=B39DDB)
 ![Vibe](https://img.shields.io/badge/Vibe-Cozy%20%26%20Pastel-pink?style=for-the-badge&color=FFC4D6)
 
-> **"Hello World!"** Bienvenid@ a mi rincón digital. Este repositorio contiene el código fuente de mi portafolio personal, diseñado con una estética retro de videojuego pero con una paleta de colores suave.
+> **"Hola!"** Este repositorio contiene el código fuente de mi portafolio personal, diseñado con una estética retro de videojuego pero con una paleta de colores suave.
 
-🌐 **Ver Demo en Vivo:** [https://valecov.github.io](https://valecov.github.io)
+🌐 **Ver Demo:** [https://valecov.github.io](https://valecov.github.io)
 
 ---
 
 ## 🎮 Sobre el Proyecto
 
-Esta página web sirve como mi carta de presentación profesional. Fue construida con el objetivo de mostrar mis habilidades en **Ciencia de Datos**, reflejando al mismo tiempo mi personalidad creativa y mi gusto por los videojuegos.
+Esta página web sirve como mi carta de presentación profesional. Fue construida con el objetivo de mostrar mis habilidades en **Ciencia de Datos**, reflejando al mismo tiempo mi personalidad y mis intereses personales.
 
 ### ✨ Características Principales
 * **Diseño 100% Responsivo:** Se adapta a celulares y computadoras.
