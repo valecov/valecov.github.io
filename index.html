@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentina Covarrubias Faure | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-soft: #FFC4D6;
+            --bg-cream: #FFFDD0;
+            --border-pink: #FFB6C1;
+            --border-lavender: #B39DDB;
+            --border-sky: #B3E5FC;
+            --accent-lavender: #B39DDB;
+            --accent-mint: #A5D6A7;
+            --text-dark: #4A4A4A;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background: linear-gradient(135deg, var(--bg-soft) 0%, var(--bg-cream) 100%);
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Pixel Art Box Style */
+        .pixel-box {
+            background: var(--white);
+            border: 4px solid var(--border-pink);
+            box-shadow: 
+                8px 8px 0px 0px var(--border-lavender),
+                12px 12px 0px 0px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        .pixel-box-lavender {
+            border-color: var(--border-lavender);
+            box-shadow: 
+                8px 8px 0px 0px var(--accent-mint),
+                12px 12px 0px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .pixel-box-sky {
+            border-color: var(--border-sky);
+            box-shadow: 
+                8px 8px 0px 0px var(--accent-lavender),
+                12px 12px 0px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Press Start 2P', cursive;
+            color: var(--accent-lavender);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        h1 {
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            color: var(--accent-lavender);
+            text-shadow: 2px 2px 0px var(--border-sky);
+        }
+
+        h2 {
+            font-size: clamp(1rem, 3vw, 1.4rem);
+            color: var(--accent-mint);
+            text-shadow: 2px 2px 0px var(--border-lavender);
+        }
+
+        h3 {
+            font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+            color: var(--accent-lavender);
+        }
+
+        p {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            margin-bottom: 15px;
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--accent-lavender), var(--accent-mint));
+            border: 6px solid var(--border-pink);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                6px 6px 0px 0px var(--border-lavender),
+                10px 10px 0px 0px rgba(0, 0, 0, 0.1);
+            image-rendering: pixelated;
+        }
+
+        .profile-picture::before {
+            content: "👤";
+            font-size: 60px;
+        }
+
+        .hero h1 {
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-family: 'Press Start 2P', cursive;
+            font-size: clamp(0.7rem, 2vw, 0.9rem);
+            color: var(--accent-mint);
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 0px var(--border-lavender);
+        }
+
+        .bio {
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border: 4px solid var(--border-sky);
+            box-shadow: 
+                6px 6px 0px 0px var(--accent-mint),
+                10px 10px 0px 0px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.1s ease;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, var(--border-sky), var(--accent-lavender));
+            border: 3px solid var(--border-pink);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            image-rendering: pixelated;
+        }
+
+        .project-image::before {
+            content: "📦";
+            font-size: 50px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        /* Buttons */
+        .pixel-button {
+            font-family: 'Press Start 2P', cursive;
+            font-size: clamp(0.6rem, 1.5vw, 0.8rem);
+            padding: 12px 20px;
+            border: 4px solid var(--border-pink);
+            background: var(--white);
+            color: var(--accent-lavender);
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 
+                4px 4px 0px 0px var(--border-lavender),
+                6px 6px 0px 0px rgba(0, 0, 0, 0.1);
+            transition: all 0.1s ease;
+            text-align: center;
+            image-rendering: pixelated;
+        }
+
+        .pixel-button:hover {
+            transform: translateY(4px);
+            box-shadow: 
+                2px 2px 0px 0px var(--border-lavender),
+                4px 4px 0px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .pixel-button:active {
+            transform: translateY(6px);
+            box-shadow: 
+                1px 1px 0px 0px var(--border-lavender),
+                2px 2px 0px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .pixel-button-mint {
+            background: var(--accent-mint);
+            color: var(--white);
+            border-color: var(--accent-mint);
+            box-shadow: 
+                4px 4px 0px 0px var(--border-lavender),
+                6px 6px 0px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .pixel-button-lavender {
+            background: var(--accent-lavender);
+            color: var(--white);
+            border-color: var(--accent-lavender);
+            box-shadow: 
+                4px 4px 0px 0px var(--accent-mint),
+                6px 6px 0px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin: 25px 0;
+        }
+
+        .contact-email {
+            font-family: 'Roboto Mono', monospace;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            color: var(--accent-lavender);
+            font-weight: 700;
+            word-break: break-all;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .button-group .pixel-button {
+            width: 100%;
+            padding: 18px;
+            font-size: clamp(0.7rem, 2vw, 0.9rem);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .pixel-box {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .profile-picture {
+                width: 120px;
+                height: 120px;
+            }
+
+            .profile-picture::before {
+                font-size: 50px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                gap: 15px;
+            }
+        }
+
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            margin: 40px 0 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="pixel-box pixel-box-lavender">
+                <div class="profile-picture"></div>
+                <h1>Valentina Covarrubias Faure</h1>
+                <p class="subtitle">Estudiante de Ciencia de Datos | ITAM</p>
+                <div class="bio">
+                    <p>Hola, Soy Valentina Covarrubias Faure, estudiante de Ciencia de Datos en el ITAM. A lo largo de mi trayectoria académica he desarrollado un interés profundo por la tecnología, las matemáticas y temas sociales. Fuera de lo académico, me apasiona leer y tomar fotografías digitales. También tengo un gran cariño por los animales y la jardinería. Mi objetivo es combinar mis habilidades analíticas, mi curiosidad y mi formación para aportar soluciones creativas e integrales en el ámbito de los datos y la tecnología.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+            <div class="section-title">
+                <h2>MIS PROYECTOS</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <h3>Proyecto 1</h3>
+                    <p>Descripción del proyecto placeholder. Este es un proyecto increíble que demuestra mis habilidades en ciencia de datos y tecnología.</p>
+                    <a href="https://github.com/valecov" class="pixel-button pixel-button-mint" target="_blank">Ver en GitHub 🎮</a>
+                </div>
+                <div class="project-card">
+                    <div class="project-image"></div>
+                    <h3>Proyecto 2</h3>
+                    <p>Descripción del proyecto placeholder. Otro proyecto fascinante que muestra mi pasión por la innovación y el análisis de datos.</p>
+                    <a href="https://github.com/valecov" class="pixel-button pixel-button-mint" target="_blank">Ver en GitHub 🎮</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section>
+            <div class="pixel-box pixel-box-sky contact-section">
+                <h2>¡CONTÁCTAME!</h2>
+                <div class="contact-info">
+                    <p class="contact-email">valecov@icloud.com</p>
+                </div>
+                <div class="button-group">
+                    <a href="mailto:valecov@icloud.com" class="pixel-button pixel-button-lavender">📧 Enviar Correo</a>
+                    <a href="cv.pdf" class="pixel-button pixel-button-mint" download>📄 Descargar CV (PDF)</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
