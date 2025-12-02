@@ -146,8 +146,9 @@
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 30px;
             margin-top: 20px;
+            align-items: stretch;
         }
 
         .project-card {
@@ -156,35 +157,28 @@
             box-shadow: 
                 6px 6px 0px 0px var(--accent-mint),
                 10px 10px 0px 0px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+            padding: 25px;
             transition: transform 0.1s ease;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, var(--border-sky), var(--accent-lavender));
-            border: 3px solid var(--border-pink);
-            margin-bottom: 15px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            image-rendering: pixelated;
-        }
-
-        .project-image::before {
-            content: "📦";
-            font-size: 50px;
+            flex-direction: column;
+            height: 100%;
         }
 
         .project-card h3 {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            flex-shrink: 0;
         }
 
         .project-card p {
             font-size: clamp(0.85rem, 1.8vw, 0.95rem);
             margin-bottom: 15px;
             color: var(--text-dark);
+            flex-grow: 1;
+        }
+
+        .project-card .pixel-button {
+            margin-top: auto;
+            flex-shrink: 0;
         }
 
         /* Buttons */
@@ -330,21 +324,18 @@
             </div>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image"></div>
                     <h3>CDMX Health Data Analysis</h3>
                     <p><strong>Herramientas:</strong> PostgreSQL, SQL, Data Cleaning.</p>
                     <p>Análisis profundo de 127k+ registros de mortalidad en CDMX. Se realizó un proceso completo de limpieza (ETL), se diseñó un modelo Entidad-Relación normalizado y se utilizaron consultas SQL avanzadas para detectar patrones socioeconómicos en la mortalidad por COVID-19 y enfermedades crónicas.</p>
                     <a href="https://github.com/valecov/Mortalidad_CDMX_2020" class="pixel-button pixel-button-mint" target="_blank">Ver en GitHub 🎮</a>
                 </div>
                 <div class="project-card">
-                    <div class="project-image"></div>
                     <h3>Pokémon VGC Analytics Engine</h3>
                     <p><strong>Herramientas:</strong> PySpark, Python, Big Data.</p>
                     <p>Pipeline de ingeniería de datos construida con PySpark para analizar el metagame competitivo de Pokémon. Se diseñó un proceso ETL completo que ingesta datos crudos de Smogon, limpia la información y utiliza computación distribuida para calcular sinergias de equipos y estadísticas de uso a gran escala.</p>
                     <a href="https://github.com/valecov/PokemonVGC_DataPipeline" class="pixel-button pixel-button-mint" target="_blank">Ver en GitHub 🎮</a>
                 </div>
                 <div class="project-card">
-                    <div class="project-image"></div>
                     <h3>Farah Adventures</h3>
                     <p><strong>Herramientas:</strong> Docker, Python, APIs.</p>
                     <p>Juego tipo "endless runner" donde controlas a un gato esquivando obstáculos en el ITAM. El proyecto está desplegado en Docker y cuenta con un backend en Python que consume la API de OpenWeatherMap para sincronizar el clima del juego con el clima real de la Ciudad de México.</p>
